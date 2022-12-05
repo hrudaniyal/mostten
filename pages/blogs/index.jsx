@@ -1,5 +1,10 @@
-import BlogGrid from "./BlogGrid";
+import HomeLayout from "../../layouts/HomeLayout";
+import BlogsDrawer from "./BlogsDrawer";
 function index() {
-  return <BlogGrid />;
+  return (
+    <HomeLayout>
+      <BlogsDrawer />;
+    </HomeLayout>
+  );
 }
 export default index;
