@@ -1,12 +1,10 @@
 import HomeLayout from "../../layouts/HomeLayout";
 
-function About() {
+function index() {
   return (
     <HomeLayout>
-      <div>
-        this is about page section
-      </div>
+      <div>This is contact page</div>
     </HomeLayout>
   );
 }
-export default About;
+export default index;

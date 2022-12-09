@@ -1,9 +1,12 @@
 import HomeLayout from "../../layouts/HomeLayout";
+import BlogGrid from "./BlogGrid";
 import BlogsDrawer from "./BlogsDrawer";
 function index() {
   return (
     <HomeLayout>
-      <BlogsDrawer />;
+      <BlogsDrawer />
+      <br/>
+      <BlogGrid />
     </HomeLayout>
   );
 }
