@@ -2,7 +2,7 @@ import { Card, CardActionArea, CardContent,Typography ,Box,Grid } from "@mui/mat
 import Link from "next/link";
 import Image from "next/image";
 
-export default function BlogGrid({ mostten : [] }) {
+export default function BlogGrid({ mostten}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
