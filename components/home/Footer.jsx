@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 function Footer() {
@@ -12,10 +13,11 @@ function Footer() {
                   href="javascript:void(0)"
                   className="mb-6 inline-block max-w-[160px]"
                 >
-                  <img
+                  <Image
                     src="https://cdn.tailgrids.com/2.0/image/assets/images/logo/logo.svg"
                     alt="logo"
-                    className="max-w-full"
+                    height={70}
+                    width={70}
                   />
                 </a>
                 <p className="text-body-color mb-7 text-base">

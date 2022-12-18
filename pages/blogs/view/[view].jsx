@@ -1,5 +1,5 @@
 import { Container } from "@mantine/core";
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Paper, Skeleton, Typography } from "@mui/material";
 import { doc, getDoc } from "firebase/firestore";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -21,6 +21,7 @@ function blogview({ blog }) {
                                 height={1080}
                                 objectFit="cover"
                                 src={banner}
+                                alt={title}
                                 priority
                                  />
                         </Box>
