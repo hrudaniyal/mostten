@@ -1,5 +1,6 @@
-import HomeLayout from "../../layouts/HomeLayout";
-
+// import HomeLayout from "../../layouts/HomeLayout";
+import dynamic from "next/dynamic";
+const HomeLayout = dynamic(() => import('../../layouts/HomeLayout'))
 function index() {
   return (
     <HomeLayout>

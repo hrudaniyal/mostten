@@ -1,6 +1,6 @@
-import HomeLayout from '../../layouts/HomeLayout'
-import LandingPage from './LandingPage'
-
+import dynamic from 'next/dynamic'
+const HomeLayout = dynamic(()=>import('../../layouts/HomeLayout'))
+const LandingPage = dynamic(()=>import('./LandingPage'))
 function Home() {
   return (
     <HomeLayout >

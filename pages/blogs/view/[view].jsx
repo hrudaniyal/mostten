@@ -1,11 +1,10 @@
 import { Container } from "@mantine/core";
 import { Box, Paper, Typography } from "@mui/material";
-import { height } from "@mui/system";
 import { doc, getDoc } from "firebase/firestore";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { db } from "../../../config/firebase";
-import HomeLayout from "../../../layouts/HomeLayout";
-
+const HomeLayout = dynamic(()=>import('../../../layouts/HomeLayout'))
 function blogview({ blog }) {
     const { title, banner, overview } = blog
     return <HomeLayout>

@@ -1,8 +1,9 @@
 import { collection, getDocs } from "firebase/firestore";
+import dynamic from "next/dynamic";
 import { db } from "../../config/firebase";
-import HomeLayout from "../../layouts/HomeLayout";
-import BlogGrid from "./BlogGrid";
-import BlogsDrawer from "./BlogsDrawer";
+const HomeLayout = dynamic(()=>import('../../layouts/HomeLayout'))
+const BlogGrid = dynamic(()=>import('./BlogGrid'))
+const BlogsDrawer = dynamic(()=>import('./BlogsDrawer'))
 function index({ mostten }) {
   return (
     <HomeLayout>

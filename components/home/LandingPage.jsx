@@ -1,6 +1,7 @@
+import dynamic from "next/dynamic";
+import Image from "next/image";
 import React from "react";
-import HomeLayout from "../../layouts/HomeLayout";
-
+const HomeLayout = dynamic(()=>import('../../layouts/HomeLayout'))
 function LandingPage() {
   return (
     <body>
@@ -41,7 +42,9 @@ function LandingPage() {
             </a>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-            <img
+            <Image
+                  width={468}
+                  height={350}
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
               alt="mockup"
             />
@@ -427,13 +430,15 @@ function LandingPage() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4 mt-8">
-            <img
-              className="w-full rounded-lg"
+            <Image
+            width={264}
+            height={366}
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
               alt="office content 1"
             />
-            <img
-              className="mt-4 w-full rounded-lg lg:mt-10"
+            <Image
+                  width={264}
+                  height={366}
               src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
               alt="office content 2"
             />
