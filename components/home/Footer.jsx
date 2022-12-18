@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <>
-      <footer className="relative z-10 bg-white pt-20 pb-10 lg:pt-[120px] lg:pb-20">
+      <footer className="relative p-5 z-10 bg-white pt-20 pb-10 lg:pt-[120px] lg:pb-20">
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
@@ -244,8 +244,8 @@ function Footer() {
                   y2="1.22829e-05"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#3056D3" stop-opacity="0.08" />
-                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                  <stop stopColor="#3056D3" stopOpacity="0.08" />
+                  <stop offset="1" stopColor="#C4C4C4" stopOpacity="0" />
                 </linearGradient>
               </defs>
             </svg>
@@ -271,8 +271,8 @@ function Footer() {
                   y2="37.5"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#13C296" stop-opacity="0.31" />
-                  <stop offset="1" stop-color="#C4C4C4" stop-opacity="0" />
+                  <stop stopColor="#13C296" stopOpacity="0.31" />
+                  <stop offset="1" stopColor="#C4C4C4" stopOpacity="0" />
                 </linearGradient>
               </defs>
             </svg>

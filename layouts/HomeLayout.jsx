@@ -36,7 +36,7 @@ function HomeLayout(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <Link href={item}>
+            <Link href={`/${item}`}>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText primary={item} />
               </ListItemButton>
@@ -73,7 +73,7 @@ function HomeLayout(props) {
             </Typography>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
-                <Link href={item}>
+                <Link href={`/${item}`}>
                   <Button key={item} sx={{ color: "#fff" }}>
                     {item}
                   </Button>
