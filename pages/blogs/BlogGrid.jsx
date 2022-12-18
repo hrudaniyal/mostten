@@ -1,8 +1,8 @@
-import { Card, CardActionArea, CardContent,Typography ,Box,Grid } from "@mui/material";
+import { Card, CardActionArea, CardContent, Typography, Box, Grid } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function BlogGrid({ mostten}) {
+export default function BlogGrid({ mostten }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid
@@ -12,8 +12,8 @@ export default function BlogGrid({ mostten}) {
       >
 
         {
-          mostten.map((res) => {
-            const { id, title ,banner } = res
+          mostten ? mostten.map((res) => {
+            const { id, title, banner } = res
             return <Grid item xs={4} sm={4} md={4} key={id}>
               <Link href={{
                 pathname: `/blogs/view/${title}`,
@@ -21,14 +21,14 @@ export default function BlogGrid({ mostten}) {
               }} >
                 <Card sx={{ maxWidth: 345 }}>
                   <CardActionArea>
-  
+
                     <Box>
-                      <Image 
-                      width={345}
-                      height={210}
-                      src={banner}
-                      alt={title}
-                       />
+                      <Image
+                        width={345}
+                        height={210}
+                        src={banner}
+                        alt={title}
+                      />
                     </Box>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
@@ -45,6 +45,7 @@ export default function BlogGrid({ mostten}) {
               </Link>
             </Grid>
           })
+            : <></>
         }
       </Grid>
     </Box >
