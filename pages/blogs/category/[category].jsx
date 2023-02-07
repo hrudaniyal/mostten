@@ -1,5 +1,8 @@
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../../config/firebase";
+import dynamic from "next/dynamic";
+const HomeLayout = dynamic(()=>import('../../../layouts/HomeLayout'))
+const BlogGrid = dynamic(()=>import('../BlogGrid'))
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -11,8 +14,6 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Paper } from "@mui/material";
 import Link from "next/link";
-import HomeLayout from "../../../layouts/HomeLayout";
-import BlogGrid from "../BlogGrid";
 export default function Category({ category, mostten }) {
   const anchor = "right";
   const [state, setState] = React.useState({
