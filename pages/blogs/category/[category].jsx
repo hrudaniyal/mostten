@@ -13,7 +13,7 @@ import { Paper } from "@mui/material";
 import Link from "next/link";
 import HomeLayout from "../../../layouts/HomeLayout";
 import BlogGrid from "../BlogGrid";
-export default function category({ category, mostten }) {
+export default function Category({ category, mostten }) {
   const anchor = "right";
   const [state, setState] = React.useState({
     right: false,
