@@ -15,7 +15,9 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Footer from "../components/home/Footer";
 import Link from "next/link";
-
+import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
+import { Paper } from "@mui/material";
 const drawerWidth = 240;
 const navItems = ["about", "contact", "blogs"];
 
@@ -32,6 +34,7 @@ function HomeLayout(props) {
       <Typography variant="h6" sx={{ my: 2 }}>
         MUI
       </Typography>
+
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -71,6 +74,17 @@ function HomeLayout(props) {
             >
               MUI
             </Typography>
+
+            <Paper >
+              <InputBase
+                sx={{ ml: 1, flex: 1 }}
+                placeholder="Search Google Maps"
+                inputProps={{ "aria-label": "search google maps" }}
+              />
+              <IconButton type="button" sx={{ p: "10px" }} aria-label="search">
+                <SearchIcon />
+              </IconButton>
+            </Paper>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
               {navItems.map((item) => (
                 <Link href={`/${item}`}>

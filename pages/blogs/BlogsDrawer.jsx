@@ -3,20 +3,17 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import MenuIcon from '@mui/icons-material/Menu';
-export default function BlogDrawer() {
-  const anchor = 'right'
+import MenuIcon from "@mui/icons-material/Menu";
+import { Paper } from "@mui/material";
+import Link from "next/link";
+export default function BlogDrawer({ category }) {
+  const anchor = "right";
   const [state, setState] = React.useState({
-     right: false,
+    right: false,
   });
-
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -36,36 +33,38 @@ export default function BlogDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <h1>CATEGORY</h1>
+        {category.map((category) => {
+          const { id, cate } = category;
+          return (
+           <Link href={`/blogs/category/${cate}`} key={id}>
+            <Paper sx={{margin:"6px"}} elevator='1' >
+              <ListItem component="div" disablePadding>
+                <ListItemButton sx={{ height: 56 }}>
+                  <ListItemText
+                    primary={cate}
+                    primaryTypographyProps={{
+                      color: "primary",
+                      fontWeight: "medium",
+                      variant: "body2",
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            </Paper>
+           </Link>
+          );
+        })}
       </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+       
     </Box>
   );
 
   return (
     <div>
-      <Button onClick={toggleDrawer(anchor, true)} variant='outlined'  > <MenuIcon mr={3} /> OPEN SIDEBAR</Button>
+      <Button onClick={toggleDrawer(anchor, true)} variant="outlined">
+        <MenuIcon mr={3} /> OPEN SIDEBAR
+      </Button>
       <Drawer
         anchor={anchor}
         open={state[anchor]}

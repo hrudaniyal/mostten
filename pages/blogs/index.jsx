@@ -4,10 +4,11 @@ import { db } from "../../config/firebase";
 const HomeLayout = dynamic(()=>import('../../layouts/HomeLayout'))
 const BlogGrid = dynamic(()=>import('./BlogGrid'))
 const BlogsDrawer = dynamic(()=>import('./BlogsDrawer'))
-function index({ mostten }) {
+function index({ mostten ,category }) {
+ 
   return (
     <HomeLayout>
-      <BlogsDrawer />
+      <BlogsDrawer category={category} />
       <br />
       <BlogGrid mostten={mostten} />
     </HomeLayout>
@@ -19,9 +20,14 @@ export const getServerSideProps = async () => {
   const snapshot = await getDocs(docRef)
   const data = snapshot.docs.map((res) => ({ ...res.data(), id: res.id }))
   const mostten = JSON.parse(JSON.stringify(data))
+
+  const catedocRef = collection(db, 'categories')
+  const catesnapshot = await getDocs(catedocRef)
+  const catedata = catesnapshot.docs.map((res) => ({ ...res.data(), id: res.id }))
+  const category = JSON.parse(JSON.stringify(catedata))
   return {
     props: {
-      mostten,
+      mostten,category
     }
   }
 }
