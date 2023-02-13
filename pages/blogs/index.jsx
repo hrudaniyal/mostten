@@ -1,8 +1,8 @@
 import { db } from "../../config/firebase";
 import dynamic from "next/dynamic";
-const HomeLayout = dynamic(()=>import('../../layouts/HomeLayout'))
-const BlogGrid = dynamic(()=>import('./BlogGrid'))
-import { collection, getDocs  } from "firebase/firestore";
+const HomeLayout = dynamic(() => import("../../layouts/HomeLayout"));
+const BlogGrid = dynamic(() => import("./BlogGrid"));
+import { collection, getDocs } from "firebase/firestore";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -32,7 +32,10 @@ export default function Category({ category, mostten }) {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{
+        width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
+        
+      }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -43,7 +46,7 @@ export default function Category({ category, mostten }) {
           const { id, cate } = category;
           return (
             <Link href={`/blogs/category/${cate}`} key={id}>
-              <Paper sx={{ margin: "6px" }} elevator="1" >
+              <Paper sx={{ margin: "6px" }} elevator="1">
                 <ListItem component="div" disablePadding>
                   <ListItemButton sx={{ height: 56 }}>
                     <ListItemText
@@ -67,7 +70,7 @@ export default function Category({ category, mostten }) {
   return (
     <HomeLayout>
       <Box>
-        <Button onClick={toggleDrawer(anchor, true)} variant="outlined">
+        <Button onClick={toggleDrawer(anchor, true)} variant="outlined"  color="secondary">
           <MenuIcon mr={3} /> OPEN SIDEBAR
         </Button>
         <Drawer
@@ -78,25 +81,29 @@ export default function Category({ category, mostten }) {
           {list(anchor)}
         </Drawer>
       </Box>
-      <br/>
+      <br />
       <BlogGrid mostten={mostten} />
     </HomeLayout>
   );
 }
 
 export const getServerSideProps = async () => {
-  const docRef = collection(db, 'mostten')
-  const snapshot = await getDocs(docRef)
-  const data = snapshot.docs.map((res) => ({ ...res.data(), id: res.id }))
-  const mostten = JSON.parse(JSON.stringify(data))
+  const docRef = collection(db, "mostten");
+  const snapshot = await getDocs(docRef);
+  const data = snapshot.docs.map((res) => ({ ...res.data(), id: res.id }));
+  const mostten = JSON.parse(JSON.stringify(data));
 
-  const catedocRef = collection(db, 'categories')
-  const catesnapshot = await getDocs(catedocRef)
-  const catedata = catesnapshot.docs.map((res) => ({ ...res.data(), id: res.id }))
-  const category = JSON.parse(JSON.stringify(catedata))
+  const catedocRef = collection(db, "categories");
+  const catesnapshot = await getDocs(catedocRef);
+  const catedata = catesnapshot.docs.map((res) => ({
+    ...res.data(),
+    id: res.id,
+  }));
+  const category = JSON.parse(JSON.stringify(catedata));
   return {
     props: {
-      mostten,category
-    }
-  }
-}
+      mostten,
+      category,
+    },
+  };
+};

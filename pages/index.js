@@ -1,8 +1,11 @@
+import { Container } from "@mui/material";
 import dynamic from "next/dynamic";
-const Home = dynamic(()=>import('../components/home/Home'))
+const Home = dynamic(() => import("../components/home/Home"));
 function index() {
   return (
-     <Home />
+    <Container >
+      <Home />;
+    </Container>
   );
 }
 

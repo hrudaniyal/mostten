@@ -1,10 +1,14 @@
-// import HomeLayout from "../../layouts/HomeLayout";
+import { Box, Typography } from "@mui/material";
 import dynamic from "next/dynamic";
-const HomeLayout = dynamic(() => import('../../layouts/HomeLayout'))
+const HomeLayout = dynamic(() => import("../../layouts/HomeLayout"));
 function index() {
   return (
     <HomeLayout>
-      <div>This is contact page</div>
+      <Box>
+        <Typography sx={{ backgroundColor: ".main" ,color:'secondary.main'}}>
+          This is contact page
+        </Typography>
+      </Box>
     </HomeLayout>
   );
 }

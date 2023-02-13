@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3.5in"
+   height="1.001in"
+   viewBox="0 0 88.9 25.425401"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
+   sodipodi:docname="MOSTTEN LOGO.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.042298"
+     inkscape:cx="171.25621"
+     inkscape:cy="71.476681"
+     inkscape:window-width="1331"
+     inkscape:window-height="768"
+     inkscape:window-x="35"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient24586">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop24582" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0.77171844;"
+         offset="1"
+         id="stop24584" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4706">
+      <stop
+         style="stop-color:#be9e44;stop-opacity:1;"
+         offset="0"
+         id="stop4702" />
+      <stop
+         style="stop-color:#cbb26a;stop-opacity:1;"
+         offset="0.41208726"
+         id="stop6214" />
+      <stop
+         style="stop-color:#cbb26a;stop-opacity:1;"
+         offset="0.59947801"
+         id="stop6216" />
+      <stop
+         style="stop-color:#be9e44;stop-opacity:0.97254902;"
+         offset="1"
+         id="stop4704" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient2790">
+      <stop
+         style="stop-color:#996800;stop-opacity:0.87716848;"
+         offset="0"
+         id="stop4076" />
+      <stop
+         style="stop-color:#ff0000;stop-opacity:0;"
+         offset="1"
+         id="stop4078" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient2790-1">
+      <stop
+         style="stop-color:#996800;stop-opacity:0.87716848;"
+         offset="0"
+         id="stop2786" />
+      <stop
+         style="stop-color:#aa5555;stop-opacity:0;"
+         offset="1"
+         id="stop2788" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4706"
+       id="linearGradient4708"
+       x1="85.529327"
+       y1="90.710693"
+       x2="198.66084"
+       y2="90.710693"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.93498501,0,0,0.93498511,-6.5572747,22.486758)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient24586"
+       id="linearGradient24588"
+       x1="17.656157"
+       y1="169.79637"
+       x2="198.11876"
+       y2="170.18188"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.43966396,0,0,0.23238711,1.7842819,-26.917755)" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;font-family:Cantarell;-inkscape-font-specification:'Cantarell, Normal';fill:none;stroke:#a03c3c;stroke-width:4.28199;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       x="90.611191"
+       y="99.098923"
+       id="text2603"><tspan
+         sodipodi:role="line"
+         id="tspan2601"
+         style="stroke-width:4.282"
+         x="90.611191"
+         y="99.098923" /></text>
+    <rect
+       style="fill:url(#linearGradient24588);fill-opacity:1;stroke:none;stroke-width:1.36872;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9174"
+       width="88.889969"
+       height="25.260639"
+       x="0"
+       y="0"
+       ry="0.32074192" />
+    <g
+       id="g19438"
+       transform="matrix(0.41797599,0,0,0.41797599,-7.7218598,-24.104226)">
+      <path
+         id="path234"
+         style="fill:#be9e44;fill-opacity:1;stroke:#000000;stroke-width:4.887;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         d="m 79.294064,86.169937 c 2e-6,9.941127 -8.058873,18.000003 -18,18.000003 -9.941127,0 -18.000002,-8.058876 -18,-18.000003 0,-9.941125 9.135453,5.455873 19.076578,5.455873 9.941126,0 16.923422,-15.396998 16.923422,-5.455873 z"
+         sodipodi:nodetypes="sssss" />
+      <ellipse
+         style="fill:#000000;fill-opacity:1;stroke:#604a24;stroke-width:4.28199;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="path2547"
+         cx="61.517605"
+         cy="78.766602"
+         rx="7.7132206"
+         ry="7.4655724" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.7486px;font-family:Cantarell;-inkscape-font-specification:'Cantarell, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient4708);fill-opacity:1;stroke:none;stroke-width:4.0036;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         x="71.226494"
+         y="115.5288"
+         id="text2657"
+         transform="scale(1.1650692,0.85831811)"><tspan
+           sodipodi:role="line"
+           id="tspan2655"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.7486px;font-family:Cantarell;-inkscape-font-specification:'Cantarell, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient4708);fill-opacity:1;stroke:none;stroke-width:4.00361"
+           x="71.226494"
+           y="115.5288">MOSTTEN</tspan></text>
+    </g>
+    <rect
+       style="fill:#000000;fill-opacity:0.751161;stroke:none;stroke-width:4.28199;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect9644"
+       width="2.314039"
+       height="1.3646717"
+       x="231.1667"
+       y="173.75807"
+       ry="0.68233585" />
+  </g>
+</svg>

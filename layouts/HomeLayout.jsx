@@ -18,9 +18,12 @@ import Link from "next/link";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { Paper } from "@mui/material";
+import Megamenu from "../components/Megamunu";
+import Image from "next/image";
 const drawerWidth = 240;
 const navItems = ["about", "contact", "blogs"];
-
+const catelist = ["bussiness", "software", "film"];
+import logo from "./MOSTTEN_LOGO.svg";
 function HomeLayout(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -28,22 +31,46 @@ function HomeLayout(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  // FOR MOBILE SITE
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Most Ten
+      </Typography>
+      <Megamenu />
+      <Divider />
+
+      <Typography variant="h6" sx={{ textAlign: "left" }}>
+        Navigations
       </Typography>
 
-      <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <Link href={`/${item}`}>
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item} />
-              </ListItemButton>
-            </Link>
+            <Paper sx={{ width: "100%", margin: "3px" }} elevation={2}>
+              <Link href={`/${item}`}>
+                <ListItemButton sx={{ textAlign: "center" }}>
+                  <ListItemText secondary={item} />
+                </ListItemButton>
+              </Link>
+            </Paper>
+          </ListItem>
+        ))}
+      </List>
+      <hr />
+      <Typography variant="h6" sx={{ textAlign: "left" }}>
+        Categories
+      </Typography>
+      <List>
+        {catelist.map((item) => (
+          <ListItem key={item} disablePadding>
+            <Paper sx={{ width: "100%", margin: "3px" }} elevation={2}>
+              <Link href={`/blogs/category/${item}`}>
+                <ListItemButton sx={{ textAlign: "center" }}>
+                  <ListItemText secondary={item} />
+                </ListItemButton>
+              </Link>
+            </Paper>
           </ListItem>
         ))}
       </List>
@@ -52,32 +79,76 @@ function HomeLayout(props) {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
-
+  // FOR DESKTOP SITE
   return (
     <>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", backgroundColor: "primary.main" }}>
         <AppBar component="nav">
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
+          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-            >
-              MUI
-            </Typography>
+              <Box>
+                <IconButton
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{
+                    mr: 2,
+                    display: { sm: "none" },
+                    color: "secondary.main",
+                  }}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Image src={logo} alt="logo " width="100px" height="60px" />
+              </Box>
+              {/* Nav links */}
+              <Box sx={{ display: { xs: "none", sm: "block", md: "none" } }}>
+                <Megamenu />
+              </Box>
+              <Box
+                sx={{ display: { xs: "none", sm: "none", md: "block" } }}
+                alignItems="center"
+                justifyContent="center"
+              >
+                {catelist.map((item) => (
+                  <Link href={`/blogs/category/${item}`} key={item}>
+                    <Button
+                     sx={{
+                      color: "primary.text",
+                      textTransform: "capitalize",
+                    }}
+                    >
+                      {item}
+                    </Button>
+                  </Link>
+                ))}
+              </Box>
 
-            <Paper >
+              <Box sx={{ display: { xs: "none", sm: "block", ml: "100px" } }}>
+                {navItems.map((item) => (
+                  <Link href={`/${item}`} key={item}>
+                    <Button
+                      sx={{
+                        color: "primary.text",
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      {item}
+                    </Button>
+                  </Link>
+                ))}
+              </Box>
+            </Box>
+            {/* Search bar */}
+            <Paper>
               <InputBase
-                sx={{ ml: 1, flex: 1 }}
+                sx={{ mt: 1, flex: 1 }}
                 placeholder="Search Google Maps"
                 inputProps={{ "aria-label": "search google maps" }}
               />
@@ -85,18 +156,10 @@ function HomeLayout(props) {
                 <SearchIcon />
               </IconButton>
             </Paper>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              {navItems.map((item) => (
-                <Link href={`/${item}`}>
-                  <Button key={item} sx={{ color: "#fff" }}>
-                    {item}
-                  </Button>
-                </Link>
-              ))}
-            </Box>
           </Toolbar>
         </AppBar>
-        <Box component="nav">
+
+        <Box component="nav" sx={{backgroundColor:'primary.main'}}>
           <Drawer
             container={container}
             variant="temporary"
@@ -127,10 +190,6 @@ function HomeLayout(props) {
 }
 
 HomeLayout.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 

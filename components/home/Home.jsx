@@ -4,7 +4,7 @@ const LandingPage = dynamic(()=>import('./LandingPage'))
  function Home() {
  
   return (
-    <HomeLayout >
+    <HomeLayout sx={{backgroundColor:"primary.main"}} >
          <LandingPage />
     </HomeLayout>
   )

@@ -67,7 +67,7 @@ export default function Category({ category, mostten }) {
   return (
     <HomeLayout>
       <Box>
-        <Button onClick={toggleDrawer(anchor, true)} variant="outlined">
+        <Button onClick={toggleDrawer(anchor, true)} variant="outlined" color="secondary">
           <MenuIcon mr={3} /> OPEN SIDEBAR
         </Button>
         <Drawer
