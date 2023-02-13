@@ -1,13 +1,56 @@
-import dynamic from 'next/dynamic'
-const HomeLayout = dynamic(()=>import('../../layouts/HomeLayout'))
-const LandingPage = dynamic(()=>import('./LandingPage'))
- function Home() {
- 
-  return (
-    <HomeLayout sx={{backgroundColor:"primary.main"}} >
-         <LandingPage />
-    </HomeLayout>
-  )
-}
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import { Typography } from "@mui/material";
+import TheLatest from "./TheLatest";
 
-export default Home
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
+
+export default function Home({ mostten }) {
+  return (
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={8}>
+          <Item sx={{ minHeight: "500px" }}>
+            {mostten.map((item) => {
+              const { title, id } = item;
+              return (
+                <Box key={id}>
+                  <Typography color="primary.main">{title}</Typography>
+                </Box>
+              );
+            })}
+          </Item>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          {/* <Item sx={{ minHeight: "500px" }}>
+            <Item sx={{ minHeight: "500px" }}>
+              {mostten.map((item) => {
+                const { title, id } = item;
+                return (
+                  <Box key={id}>
+                    <Typography color="primary.main">{title}</Typography>
+                  </Box>
+                );
+              })}
+            </Item>
+          </Item> */}
+          <TheLatest mostten={mostten} />
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Item sx={{ minHeight: "200px" }}>xs=6 md=4</Item>
+        </Grid>
+        <Grid item xs={12} md={8}>
+          <Item sx={{ minHeight: "500px" }}>xs=6 md=8</Item>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+}

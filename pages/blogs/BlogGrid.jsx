@@ -48,7 +48,7 @@ export default function BlogGrid({ mostten }) {
                       maxWidth: 345,
                       backgroundColor: "primary.dark",
                       color: "primary.text",
-                      boxShadow:'0px 0px 10px 8px  #222'
+                       
                     }}
                   >
                     <CardActionArea>

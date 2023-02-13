@@ -12,7 +12,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Paper } from "@mui/material";
 import Link from "next/link";
 export default function Category({ category, mostten }) {
   const anchor = "right";
@@ -34,7 +33,11 @@ export default function Category({ category, mostten }) {
     <Box
       sx={{
         width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
-        
+
+        textAlign: "center",
+        backgroundColor: "primary.main",
+        color: "primary.text",
+        minHeight: "100vh",
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -42,27 +45,35 @@ export default function Category({ category, mostten }) {
     >
       <List>
         <h1>CATEGORY</h1>
-        {category.map((category) => {
-          const { id, cate } = category;
-          return (
-            <Link href={`/blogs/category/${cate}`} key={id}>
-              <Paper sx={{ margin: "6px" }} elevator="1">
-                <ListItem component="div" disablePadding>
-                  <ListItemButton sx={{ height: 56 }}>
+        <Box sx={{p:'10px'}}>
+          {category.map((category) => {
+            const { id, cate } = category;
+            return (
+              <Link href={`/blogs/category/${cate}`} key={id}>
+                <ListItem
+                  component="div"
+                  disablePadding
+                  sx={{
+                    bgcolor: "primary.dark",
+                    mt: "5px",
+                    textTransform: "capitalize",
+                  }}
+                >
+                  <ListItemButton sx={{ p: "7px" }}>
                     <ListItemText
                       primary={cate}
                       primaryTypographyProps={{
-                        color: "primary",
+                        color: "primary.para",
                         fontWeight: "medium",
                         variant: "body2",
                       }}
                     />
                   </ListItemButton>
                 </ListItem>
-              </Paper>
-            </Link>
-          );
-        })}
+              </Link>
+            );
+          })}
+        </Box>
       </List>
     </Box>
   );
@@ -70,7 +81,11 @@ export default function Category({ category, mostten }) {
   return (
     <HomeLayout>
       <Box>
-        <Button onClick={toggleDrawer(anchor, true)} variant="outlined"  color="secondary">
+        <Button
+          onClick={toggleDrawer(anchor, true)}
+          variant="outlined"
+          color="secondary"
+        >
           <MenuIcon mr={3} /> OPEN SIDEBAR
         </Button>
         <Drawer
